@@ -11,6 +11,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
+    binding.pry 
 
   end
 
