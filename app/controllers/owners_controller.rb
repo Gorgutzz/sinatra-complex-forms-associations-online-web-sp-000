@@ -37,8 +37,5 @@ class OwnersController < ApplicationController
     end
     redirect "owners/#{@owner.id}"
 
-  patch '/owners/:id' do
-    binding pry
-
   end
 end
