@@ -11,7 +11,6 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-
     pet = Pet.new()
     pet.name = params[:pet_name]
     if params[:owner_name] == ""
