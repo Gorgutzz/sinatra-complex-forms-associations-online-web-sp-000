@@ -12,7 +12,15 @@ class PetsController < ApplicationController
 
   post '/pets' do
 
-    redirect to "pets/#{@pet.id}"
+    pet = Pet.new()
+    pet.name = params[:pet_name]
+    if params[:owner_name] == ""
+      pet.owner = Owner.find(params[:owner_id])
+    else
+      pet.owner = Owner.create(name: params[:owner_name])
+    end
+    pet.save
+    redirect to "pets/#{pet.id}"
   end
 
   get '/pets/:id' do
